@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Posts</title>
+</head>
+
+<body>
+	<% @blog.each do |post| %>
+		<a href="/post_details/<%= post.post_id.to_s %>" style="text-align: center; display: block;"><%= post.title %></a>
+		<h3 style="text-align: center;"><%= post.creation_date %></h3>
+
+	<% end %>
+</body>
+
+</html>

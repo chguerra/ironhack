@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Post viewer</title>
+</head>
+
+<body>
+	<% @blog.posts.each do |post| %>
+		<% if post.post_id == @post_id %>
+			<h1  style="text-align: center;">
+				<%= post.title %></h1>
+			<p style="text-align: center;">
+				<%= post.creation_date %></p>
+			<h3 style="text-align: center;">
+				<%= post.text %></h3>
+		<% end %>
+	<% end %>
+</body>
+
+</html>
