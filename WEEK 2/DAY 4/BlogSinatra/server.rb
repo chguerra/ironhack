@@ -1,12 +1,11 @@
 require 'sinatra'
 require 'rspec'
+include Marshal
 require_relative 'lib/post.rb'
 require_relative 'lib/blog.rb' 
 
-blog = Blog.new
-blog.add_post(Post.new("My first post","This is the text for my first post"))
-blog.add_post(Post.new("My second post","This is the text for my second post"))
-blog.add_post(Post.new("This is not a post","The cake is a lie"))
+blog = File.open('data.marshal','r'){|from_file| Marshal.load(from_file)}
+
 
 get "/" do 
 	'Hello world!'
@@ -36,7 +35,9 @@ end
 post "/addpost" do
 	title = params[:title]
 	text = params[:text]
-	blog.add_post(Post.new(title.to_s,text.to_s))
+	author = params[:author]
+	blog.add_post(Post.new(title.to_s,text.to_s,author.to_s))
+	File.open('data.marshal','w'){|to_file|Marshal.dump(blog, to_file)}
 	redirect '/latestposts'
 end
 
