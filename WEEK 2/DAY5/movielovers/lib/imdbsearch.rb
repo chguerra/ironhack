@@ -21,4 +21,11 @@ class ImdbSearcher
 			end
 			return @thechosen9
 	end
+	def find_movie movie_id
+		@thechosen9.each do |movie|
+			if movie.id == movie_id
+				return movie
+			end	
+		end
+	end
 end

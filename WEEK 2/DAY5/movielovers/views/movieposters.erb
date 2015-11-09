@@ -9,11 +9,11 @@
 		<div style="width: 450px; margin: auto;">
 			<form method="post" action="/guessyear" style="text-align:center;">
 				<%@movies.each_with_index do |movie, index|%>	
-						<button type="submit" name="movieid" value="<%= movie.id%>">
-							<img src="<%= movie.poster %>" width="120" height="150">
+						<button type="submit" name="movie" value="<%= movie.id%>">
+							<img  src="<%= movie.poster %>" width="120" height="150">
 						</button>
 						<%end%>
-				<ul style="text-align: center; padding-left: 0px;font-family: monospace;">Wich movie do you whing was made in <%= @year = @movies[rand(9)].year %></ul>
+				<ul style="text-align: center; padding-left: 0px;font-family: monospace;">Wich movie do you thing was made in <%= @year = @movies[@num].year %></ul>
 			</form>
 		</div>
 	</body>
