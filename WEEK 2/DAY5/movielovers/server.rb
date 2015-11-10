@@ -20,8 +20,6 @@ end
 
 post "/guessyear" do
 	result = params[:movie]
-	@movies = glob.globalmovies
-	@number = glob.globalnumber
 	binding.pry	
 	if glob.globalmovies[glob.globalnumber].id == glob.globalmovies.select{|movie| movie.id == result}
 		'YES YOU MADE IT'

@@ -1,0 +1,29 @@
+.box{
+	margin: 10px;
+}
+
+.box.blue{
+	background: cornflowerblue;
+	border: 5px inset firebrick;
+}
+
+#red {
+	background: tomato;
+	border: 5px ridge aqua;
+}
+
+#top {
+	position: absolute;
+	top: 350px;
+	left: 350px;
+}
+
+#bottom {
+	position: absolute;
+	top: 400px;
+	left: 500px;
+}
+
+.direction {
+	padding: 20px;
+}
