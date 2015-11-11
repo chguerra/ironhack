@@ -1,5 +1,6 @@
 .box{
 	margin: 10px;
+	float: left;
 }
 
 .box.blue{
@@ -16,6 +17,9 @@
 	position: absolute;
 	top: 350px;
 	left: 350px;
+	z-index: 100;
+	box-shadow: inset 3px 3px 5px 5px black, -1px 0 5px aqua;
+
 }
 
 #bottom {
@@ -26,4 +30,8 @@
 
 .direction {
 	padding: 20px;
+}
+
+.box.green {
+	background: green;
 }
