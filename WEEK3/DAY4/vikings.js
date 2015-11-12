@@ -9,9 +9,9 @@ Viking.prototype.attack = function(){
 }
 
 var Saxon = function(){ 
-  this.name = Math.floor(Math.random()*999);
+  this.name = "Saxon";
   this.health = Math.floor(Math.random()*50); 
-  this.strength = Math.floor(Math.random()*20);
+  this.strength = Math.floor(Math.random()*50);
 }
   
 Saxon.prototype.attack = function(){
@@ -32,9 +32,9 @@ var Pit = function(viking1, viking2){
         var attack1 = figther1.attack();
         var attack2 = figther2.attack();
 
-
-        console.log("Viking " + figther1.name + " with " + figther1.health + " delivers a blow for " + attack1 + " damage.");
-        console.log("Viking " + figther2.name + " with " + figther2.health + " delivers a blow for " + attack2 + " damage.");
+        
+        console.log("Figther " + figther1.name + " with " + figther1.health + " health points delivers a blow for " + attack1 + " damage.");
+        console.log("Fighter " + figther2.name + " with " + figther2.health + " health points delivers a blow for " + attack2 + " damage.");
 
         figther2.health -= attack1;
         figther1.health -= attack2;
@@ -42,6 +42,7 @@ var Pit = function(viking1, viking2){
         console.log("Round " + i + " results")
         console.log("Figther:" + figther1.name + " has " + figther1.health + " HP");
         console.log("Figther:" + figther2.name + " has " + figther2.health + " HP");
+        console.log("-----------------------------------------\r\n")
 
         if (figther1.health <= 1 || figther2.health <= 1)
         {
@@ -50,7 +51,10 @@ var Pit = function(viking1, viking2){
       }
 
       if (figther1.health != figther2.health) {
+        console.log("********************************************\r\n");
         console.log(chooseFirstFighter()[1].name + " is the new champions!");
+        console.log(chooseFirstFighter()[1].name + " roars like a lion!!!");
+        console.log("********************************************\r\n");
         return chooseFirstFighter()[1];
       }else{
         console.log("Draw!");
@@ -67,10 +71,10 @@ var Pit = function(viking1, viking2){
     }
 }
 
-var viking1 = new Viking("Fer",100,5);
-var viking2 = new Viking("Ragnar",100,5);
+var viking1 = new Viking("Fer",999,5);
+var viking2 = new Viking("Ragnar",300,5);
 
-var village = [] new Saxon(), new Saxon(), new Saxon(), new Saxon(), new Saxon()]
+var village = [ new Saxon(), new Saxon(), new Saxon(), new Saxon(), new Saxon()]
 
 
 var pit = new Pit(viking1,viking2);
@@ -79,12 +83,16 @@ var contender = pit.battle();
 var pit2 = new Pit(contender, new Saxon());
 contender = pit2.battle();
 
-while (contender instanceof Viking)
-  if (contender instanceof Viking)
-  {
+
+var i = 0;
+
+do {
+    var saxon = village[i];
     var pit_n = new Pit(contender, saxon);
     contender = pit_n.battle();
-  }else{
-    console.lengthog("Saxons win!");
+    i = i + 1;
+  } while (contender instanceof Viking && i < village.length);
+
+  if (contender instanceof Saxon) {
+    console.log("THE SAXONS WIN THIS BATTLE");
   }
-});
