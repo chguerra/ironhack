@@ -74,7 +74,12 @@ var Pit = function(viking1, viking2){
 var viking1 = new Viking("Fer",999,5);
 var viking2 = new Viking("Ragnar",300,5);
 
-var village = [ new Saxon(), new Saxon(), new Saxon(), new Saxon(), new Saxon()]
+var village = [];
+var saxonArmy = 15;
+
+for (var v = 0; v < saxonArmy; v++) {
+  village.push(new Saxon());
+}
 
 
 var pit = new Pit(viking1,viking2);
@@ -93,6 +98,9 @@ do {
     i = i + 1;
   } while (contender instanceof Viking && i < village.length);
 
+  console.log("Your have defeated " + i + " Saxons");
+
   if (contender instanceof Saxon) {
-    console.log("THE SAXONS WIN THIS BATTLE");
+    console.log("THE SAXONS WIN THIS BATTLE\r\n OUR VIKINGS FLEE WITH SORROW");
+
   }
