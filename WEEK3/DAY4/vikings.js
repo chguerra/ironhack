@@ -71,11 +71,11 @@ var Pit = function(viking1, viking2){
     }
 }
 
-var viking1 = new Viking("Fer",999,5);
+var viking1 = new Viking("Fer",1500,10);
 var viking2 = new Viking("Ragnar",300,5);
 
 var village = [];
-var saxonArmy = 15;
+var saxonArmy = 50;
 
 for (var v = 0; v < saxonArmy; v++) {
   village.push(new Saxon());
