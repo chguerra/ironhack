@@ -1601,8 +1601,6 @@ pre code {
   }
 }
 .container-fluid {
-  padding-right: 15px;
-  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -4222,6 +4220,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   .navbar-header {
     float: left;
+    margin: 0;
   }
 }
 .navbar-collapse {
@@ -4635,7 +4634,6 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 }
 .navbar-inverse {
   background-color: #fff;
-  border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
   color: #9d9d9d;
@@ -6874,3 +6872,75 @@ nav {
   height: 1180px;
 }
 /*# sourceMappingURL=bootstrap.css.map */
+#miscojones33 {
+  width: 50%;
+  margin: 0 auto;
+  float: none;
+  text-align: center;
+  font-size: 12px;
+}
+
+#miscojones33 > li {
+  margin: 5px 10px 0;
+  color: #009999;
+}
+
+#profilepic {
+  border: 5px solid whitesmoke;
+    width: 200px;
+    position: absolute;
+    margin-left: 6%;
+    margin-top: -100px;
+    border-radius: 5px;
+}
+
+#gear {
+
+    display: inline-block;
+    float: right;
+    margin-top: -2%;
+    margin-right: 20%;
+    border-radius: 25px;
+    background-color: transparent;
+
+}
+
+#following {
+    float: right;
+    margin-right: 13%;
+    margin-top: -2%;
+}
+
+blockquote.twitter-tweet {
+  display: inline-block;
+  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 16px;
+  border-color: #eee #ddd #bbb;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  margin: 10px 5px;
+  padding: 0 16px 16px 16px;
+  max-width: 468px;
+}
+ 
+blockquote.twitter-tweet p {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 20px;
+}
+ 
+blockquote.twitter-tweet a {
+  color: inherit;
+  font-weight: normal;
+  text-decoration: none;
+  outline: 0 none;
+}
+ 
+blockquote.twitter-tweet a:hover,
+blockquote.twitter-tweet a:focus {
+  text-decoration: underline;
+}
