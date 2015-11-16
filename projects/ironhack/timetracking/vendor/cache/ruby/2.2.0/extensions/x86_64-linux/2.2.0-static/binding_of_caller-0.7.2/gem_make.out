@@ -1,0 +1,12 @@
+/home/charlie/.rbenv/versions/2.2.3/bin/ruby -r ./siteconf20151116-4853-1qxjo0s.rb extconf.rb
+
+make "DESTDIR=" clean
+make: *** No hay ninguna regla para construir el objetivo «clean».  Alto.
+
+make "DESTDIR="
+echo "Nada."
+Nada.
+
+make "DESTDIR=" install
+echo "Nada."
+Nada.

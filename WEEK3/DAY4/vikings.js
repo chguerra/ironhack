@@ -75,7 +75,7 @@ var viking1 = new Viking("Fer",1500,10);
 var viking2 = new Viking("Ragnar",300,5);
 
 var village = [];
-var saxonArmy = 50;
+var saxonArmy = 5;
 
 for (var v = 0; v < saxonArmy; v++) {
   village.push(new Saxon());

@@ -6912,7 +6912,7 @@ nav {
 }
 
 blockquote.twitter-tweet {
- /* display: inline-block;*/
+  display: block;
   font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
   font-size: 12px;
   font-weight: bold;
@@ -6924,8 +6924,8 @@ blockquote.twitter-tweet {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   margin: 0 auto;
   /*padding: 0 16px 16px 16px;*/
-  max-width: 468px;
-  min-width: 45%;
+  max-width: 550px;
+  min-width: 60%;
 }
  
 blockquote.twitter-tweet p {
@@ -6958,4 +6958,16 @@ blockquote.twitter-tweet a:focus {
   font-size: 16px;
   color: #009999;
   padding-right: 6px;
+}
+
+#userinfo {
+  display: inline-block;
+  margin-left: 25%;
+  margin-top: 15%;
+ border-color: #eee #ddd #bbb;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+
 }

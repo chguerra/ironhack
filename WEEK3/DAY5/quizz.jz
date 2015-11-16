@@ -1,0 +1,5 @@
+var Question = function() {
+	this.id 
+	this.question
+	this.answer
+}
