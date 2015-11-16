@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+jarray = [*1..25]
+
+jarray.each do |element|
+
+	Project.create(name: "Project #{element}")
+	
+end
