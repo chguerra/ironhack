@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div style="display:block;border-radius: 15px;">
+		<h1 style="text-align:center;font-family:fantasy;">This projects are awesome</h1>
+		<% @projects.each do |element|%>
+			<li style="font-weight:900;font-size:24px;color:black;border:5px solid blue;background-color:aquamarine;text-align:center;list-style:none;">
+			<style type="text/css">
+				p:hover{
+					color: green;
+					border-radius: 5px;
+				}
+			</style>
+		<p>Bundle exec&nbsp;<%= element.name %></p>
+		<% if element.created_at.today? %>
+		<p><%= element.created_at%></p>
+		<% else %>
+		<p><%= element.updated_at%></p>
+		<%end%>
+			</li>
+			<%end%>
+	</div>		
+</body>
+</html>
