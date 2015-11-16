@@ -12,14 +12,13 @@
 				p:hover{
 					color: green;
 					border-radius: 5px;
+					
 				}
 			</style>
 		<p>Bundle exec&nbsp;<%= element.name %></p>
-		<% if element.created_at.today? %>
-		<p><%= element.created_at%></p>
-		<% else %>
-		<p><%= element.updated_at%></p>
-		<%end%>
+		<% if element.description.present? %>
+		<%= element.created_at%> - <%=element.description%>
+		<% end %>
 			</li>
 			<%end%>
 	</div>		

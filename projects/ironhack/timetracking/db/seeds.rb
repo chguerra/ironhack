@@ -10,6 +10,6 @@ jarray = [*1..25]
 
 jarray.each do |element|
 
-	Project.create(name: "Project #{element}")
+	Project.create(name: "Project #{element}", description: "Description number #{element}")
 	
 end
