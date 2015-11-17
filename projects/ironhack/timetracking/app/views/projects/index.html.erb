@@ -5,9 +5,9 @@
 </head>
 <body>
 	<div style="display:block;border-radius: 15px;">
-		<h1 style="text-align:center;font-family:fantasy;">This projects are awesome</h1>
+		<h1 style="text-align:center;font-family:monospace;">This projects are awesome</h1>
 		<% @projects.each do |element|%>
-			<li style="font-weight:900;font-size:24px;color:black;border:5px solid blue;background-color:aquamarine;text-align:center;list-style:none;">
+			<li style="font-family:monospace;font-size:14px;color:black;text-align:center;list-style:none;">
 			<style type="text/css">
 				p:hover{
 					color: green;
@@ -15,9 +15,9 @@
 					
 				}
 			</style>
-		<p>Bundle exec&nbsp;<%= element.name %></p>
+		<a href="/projects/<%=element.id%>" style="text-decoration:none;"><p>Bundle exec&nbsp;<%= element.name %></p></a>
 		<% if element.description.present? %>
-		<%= element.created_at%> - <%=element.description%>
+		<p style="font-size:10px;"><%= element.created_at%> - <%=element.description%></p>
 		<% end %>
 			</li>
 			<%end%>
