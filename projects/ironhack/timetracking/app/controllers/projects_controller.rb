@@ -1,6 +1,11 @@
 class ProjectsController < ApplicationController
 	def index
-		@projects = Project.first_updated_projects(10)
+		if Project.first_updated_projects(10).empty?
+			render 'layouts/no_projects'
+		else
+			@projects = Project.first_updated_projects(10)
+		end
+		
 	end
 
     def show

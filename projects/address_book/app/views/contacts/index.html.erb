@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div style="width:30%;margin:0 auto;display:block;">
+		<% @contact.each do |element| %>
+			<li style="list-style:none;text-align:center;">
+				<%= element.name %><br>
+				<%= element.address %><br>
+				<%= element.phone_number %><br>
+				<%= element.email %>	
+			</li><br>
+		<%end%>
+	</div>	
+</body>
+</html>
