@@ -7,13 +7,16 @@
 	<div style="width:30%;margin:0 auto;text-align:center;">
 		<h1><%=@project.name%></h1>
 		<h4><%=@project.description%></h4>
-		<% @entries.each do |project|%>
+		<% @entries.each do |element|%>
 		<li style="text-decoration:none;">
-			Entry: <%= project.comments%> - Time: <%= project.hours %>  hours and <%= project.minutes %> minutes created at <%= project.date %> 
+			Entry: <%= element.comments%> - Time: <%= element.hours %>  hours and <%= element.minutes %> minutes created at <%= element.date %> 
+			<%= link_to('Edit entry', edit_project_entry_path(@project, element))%>
+		</li>
 		<%end%>
 		<p>Total hours worked: <%= @total_hours%> hours and <%=@minutes%> minutes</p>
-		</li>
+		
 		<%= link_to('Add a new entry', new_project_entry_path(@project))%>
+		
 		<a href="/projects/<%=@prev_project%>/entries">Previous</a>
 		<a href="/projects/<%=@next_project%>/entries">Next</a>
 	</div>

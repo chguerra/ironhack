@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div style="width:40%; margin:0 auto; display:block;text-align:center;text-family:monospace;">
+		<div>	
+			<% if @entry.errors.any? %>
+			<ul style="list-style-type:none; color:red; text-align:center;padding:0;">
+				<% @entry.errors.full_messages.each do |error_msg| %>
+				<li><%= error_msg %></li>
+				<%end %>
+			</ul>
+			<% end %>
+		</div>
+		<%= form_for [@project, @entry] do |f| %>
+		<%= f.label :hours%>
+		<%= f.text_field :hours%>
+		<br>
+		<%= f.label :minutes%>
+		<%= f.text_field :minutes%>
+		<br>
+		<%= f.label :date%>
+		<%= f.date_field :date%>
+		<br>
+		<%= f.label :comments%>
+		<%= f.text_area :comments%>
+		<br>
+		<%= f.submit 'Save' %>
+		<%= link_to('Cancel', project_path(@entry.project_id))%>
+		<% end %>
+	</div>
+</body>
+</html>
