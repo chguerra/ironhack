@@ -1,9 +1,9 @@
 class ProjectsController < ApplicationController
 	def index
-		if Project.first_updated_projects(10).empty?
+		if Project.first_updated_projects(100).empty?
 			render 'layouts/no_projects'
 		else
-			@projects = Project.first_updated_projects(10)
+			@projects = Project.first_updated_projects(100)
 		end
 		
 	end

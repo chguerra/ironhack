@@ -25,6 +25,7 @@
 		<%= f.date_field :date%>
 		<br>
 		<%= f.submit 'Save' %>
+		<%= link_to('Cancel', project_path(@entry.project_id))%>
 		<% end %>
 	</div>
 </body>

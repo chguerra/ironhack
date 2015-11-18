@@ -6,7 +6,7 @@
 <body>
 	<div style="display:block;border-radius: 15px;">
 		<h1 style="text-align:center;font-family:monospace;">This projects are awesome</h1>
-		<% @projects.each do |element|%>
+		<% @projects.each do |project|%>
 			<li style="font-family:monospace;font-size:14px;color:black;text-align:center;list-style:none;">
 			<style type="text/css">
 				p:hover{
@@ -15,9 +15,9 @@
 					
 				}
 			</style>
-		<a href="/projects/<%=element.id%>" style="text-decoration:none;"><p>Bundle exec&nbsp;<%= element.name %></p></a>
-		<% if element.description.present? %>
-		<p style="font-size:10px;"><%= element.created_at%> - <%=element.description%></p>
+		<%= link_to(project.name, project_path(project))%>
+		<% if project.description.present? %>
+		<p style="font-size:10px;"><%= project.created_at%> - <%=project.description%></p>
 		<% end %>
 			</li>
 			<%end%>
