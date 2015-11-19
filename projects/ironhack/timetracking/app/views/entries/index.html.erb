@@ -4,7 +4,7 @@
 	<title></title>
 </head>
 <body>
-	<div style="width:40%;margin:0 auto;text-align:center;">
+	<div style="width:40 	%;margin:0 auto;text-align:center;">
 	
 		<h1><%=@project.name%></h1>
 		<h4><%=@project.description%></h4>
@@ -16,7 +16,7 @@
 			<%= link_to('Delete', project_entry_path(@project, element), method: :delete, data:{confirm: 'Are you sure?'}) %>
 		</li>
 		<%end%>
-		<div style="width=40%;display:block; background-color: green;color: white;">
+		<div style="width=40 	%;display:block; background-color: green;color: white;">
 
 		<%= flash_message %>
 		</div>

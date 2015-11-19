@@ -1,10 +1,12 @@
 class Project < ActiveRecord::Base
 	validates :name, presence: true
 	validates :name, uniqueness: true
-	validates :name, length: {maximum: 10}
-	validates :name, format: {with: /(^[a-zA-Z0-9]*$)/}
+	#validates :name, length: {maximum: 10}
+	#validates :name, format: {with: /(^[a-zA-Z0-9]*$)/}
 
 	has_many :entries
+	has_many :participations
+	has_many :people, through: :participations
 
 	def self.iron_find(id)
 		where(id: id).first

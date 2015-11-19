@@ -1,0 +1,11 @@
+<div style="width:40%; margin:0 auto; display:block;text-align:center;text-family:monospace;">
+  <%= form_for [@user] do |f| %>
+  <%= f.label :name%>
+  <%= f.text_field :name%>
+  <br>
+  <%= f.label :email%>
+  <%= f.text_field :email%>
+  <br>
+  <%= f.submit 'Add user' %>
+  <% end %>
+</div>

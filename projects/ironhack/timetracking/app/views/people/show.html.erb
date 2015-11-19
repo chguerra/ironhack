@@ -1,0 +1,14 @@
+<div style="width:40%; margin:0 auto; display:block;text-align:center;text-family:monospace;">
+	<h1 style="font-family:monospace;"><%= @person.name%></h1>
+	<% @person.projects.each do |each| %>
+	<ul style="list-style-tipe:none;text-align:center;padding:0;">
+		<%= link_to(each.name, project_path(each)) %>
+	</ul>
+	<% end %>
+	<%= form_for [@person] do |f| %>
+	<%= select_tag(:project_id, options_from_collection_for_select(@project, :id, :name)) %>
+	<br><br>
+	<%= f.submit "Add #{@person.name} to project" %>
+	<%end%>
+	
+</div>

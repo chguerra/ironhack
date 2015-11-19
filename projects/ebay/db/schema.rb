@@ -11,41 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151119105204) do
+ActiveRecord::Schema.define(version: 20151119163332) do
 
-  create_table "entries", force: :cascade do |t|
-    t.integer  "project_id"
-    t.integer  "hours"
-    t.integer  "minutes"
-    t.text     "comments"
-    t.datetime "date"
+  create_table "bids", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "product_id"
+    t.float    "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "entries", ["project_id"], name: "index_entries_on_project_id"
+  add_index "bids", ["product_id"], name: "index_bids_on_product_id"
+  add_index "bids", ["user_id"], name: "index_bids_on_user_id"
 
-  create_table "participations", force: :cascade do |t|
-    t.integer  "person_id"
-    t.integer  "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "participations", ["person_id"], name: "index_participations_on_person_id"
-  add_index "participations", ["project_id"], name: "index_participations_on_project_id"
-
-  create_table "people", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "projects", force: :cascade do |t|
-    t.string   "name"
+  create_table "products", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.string   "description"
+    t.float    "deadline"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "description"
+  end
+
+  add_index "products", ["user_id"], name: "index_products_on_user_id"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -1,0 +1,14 @@
+<div style="width:40%; margin:0 auto; display:block;text-align:center;text-family:monospace;">
+  <%= form_for [@product] do |f| %>
+  <%= f.label :name%>
+  <%= f.text_field :name%>
+  <br>
+  <%= f.label :description%>
+  <%= f.text_field :description%>
+  <br>
+  <%= f.label :deadline%>
+  <%= f.text_field :deadline%>
+  <br>
+  <%= f.submit 'Add product' %>
+  <% end %>
+</div>
