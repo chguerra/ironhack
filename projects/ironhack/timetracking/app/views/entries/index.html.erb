@@ -11,6 +11,8 @@
 		<li style="text-decoration:none;">
 			Entry: <%= element.comments%> - Time: <%= element.hours %>  hours and <%= element.minutes %> minutes created at <%= element.date %> 
 			<%= link_to('Edit entry', edit_project_entry_path(@project, element))%>
+			&nbsp;
+			<%= link_to('Delete', project_entry_path(@project, element), method: :delete, data:{confirm: 'Are you sure?'}) %>
 		</li>
 		<%end%>
 		<p>Total hours worked: <%= @total_hours%> hours and <%=@minutes%> minutes</p>
