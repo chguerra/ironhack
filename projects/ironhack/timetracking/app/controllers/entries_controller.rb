@@ -20,8 +20,10 @@ class EntriesController < ApplicationController
 		@entry = @project.entries.new entry_params
 
 		if @entry.save
+			flash[:notice] = 'Entry saved succesfuly'
 			redirect_to action: 'index', controller: 'entries', project_id: @project.id
 		else
+			flash[:alert] = 'No no no, no has puesto la palabra magica'
 			render 'new'
 		end			
 		
