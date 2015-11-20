@@ -1,0 +1,15 @@
+<div id="index">
+  <h1>This is what you can do in your area today</h1>
+
+    <% @concerts.each do |concert| %>
+    <p><%=concert.band%> plays at <%=concert.venue%>. Ticket price: <%=concert.price%>€</p>
+    <%end%>
+
+    <div id="aside">
+      <h2>Next events</h2>
+      <% @next_events.each do |concert| %>
+      <p><%=concert.band%> <br> in <%=((concert.date - Time.now)/60/60/24).floor%> days</p>
+      <%end%>
+    </div>
+
+</div>

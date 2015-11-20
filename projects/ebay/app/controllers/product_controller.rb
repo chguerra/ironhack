@@ -1,12 +1,17 @@
+require 'pry'
+
 class ProductController < ApplicationController
   def new
+    binding.pry
+    @user = User.find_by(id: params[:user_id])
     @product = Product.new
   end
+
   def index
 
   end
   def show
-
+    @product = Product.find(params[:id])
   end
   def create
     @product = Product.new(entry_params)

@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   def new
+    @user = User.find_by(id: params[:user_id])
     @product = Product.new
   end
   def index
