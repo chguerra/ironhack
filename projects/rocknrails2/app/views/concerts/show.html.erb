@@ -8,8 +8,19 @@
     <h3>Date</h3>
     <p><%= @concert.date %></p>
     <h3>Price</h3>
-    <p><%= @concert.price %></p>
+    <p><%= @concert.price %>€</p>
     <h3>Description</h3>
     <p><%= @concert.description %></p>
+
+    <div id="comment">
+      <br><br><br>
+      <h3>What do people think about this concert</h3>
+        <% @concert.comments.each do |each| %>
+          <div class="box12">
+          
+          <p>Anonymous said: <%= each.text %></p>
+          </div>
+        <% end %>
+    </div>
 
 </div>

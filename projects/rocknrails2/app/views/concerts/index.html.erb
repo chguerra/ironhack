@@ -3,6 +3,7 @@
 
     <% @concerts.each do |concert| %>
     <p><%=concert.band%> plays at <%=concert.venue%>. Ticket price: <%=concert.price%>€</p>
+    <%= link_to("Check it out", concert_path(concert)) %>
     <%end%>
 
     <div id="aside">
