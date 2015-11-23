@@ -14,13 +14,18 @@
 
     <div id="comment">
       <br><br><br>
+      <%= link_to("Add a comment", new_concert_comment_path(@concert.id)) %>
       <h3>What do people think about this concert</h3>
+      <% if @concert.comments.count == 0 %>
+        <p>There are no coments.<%=link_to(" Be the first to comment.",new_concert_comment_path(@concert))%></p>
+        <% else %>
         <% @concert.comments.each do |each| %>
           <div class="box12">
-          
+
           <p>Anonymous said: <%= each.text %></p>
           </div>
         <% end %>
+      <%end%>
     </div>
 
 </div>

@@ -1,0 +1,28 @@
+<div id="index">
+  <h1>This is what you can do in your area today</h1>
+
+    <% @concerts.each do |concert| %>
+    <p><%=concert.band%> plays at <%=concert.venue%>. Ticket price: <%=concert.price%>€</p>
+    <%= link_to("Check it out", concert_path(concert)) %>
+    <%end%>
+
+    <div id="aside">
+      <h2>Next events</h2>
+      <% @next_events.each do |concert| %>
+      <p><%=concert.band%> <br> in <%=(@res=(concert.date - Time.now)/60/60/24).floor%> days.</p>
+      <%end%>
+    </div>
+    <form action="/search" method="POST">
+      <label>Cant spend more than: </label>
+      <input type="text" name="price">
+      <input type="hidden" name="authenticity_token" value="/lXSJAVooy+uTnx2aC6tjXJaaFwwq42XBodNF2VGe61fWtoL4bRMEjKV3tVw3Yk/4FO+GncyJJFOwIfi/5UjgQ==">
+      <input type="submit" name="pepe" value="Submit">
+    </form>
+    <form action="/mostcommented" method="POST">
+      <input type="hidden" name="authenticity_token" value="/lXSJAVooy+uTnx2aC6tjXJaaFwwq42XBodNF2VGe61fWtoL4bRMEjKV3tVw3Yk/4FO+GncyJJFOwIfi/5UjgQ==">
+      <input type="submit" name="pepe" value="MOST COMMENTED POSTS">
+    </form>
+
+
+</div>
+    params.permit(:price)

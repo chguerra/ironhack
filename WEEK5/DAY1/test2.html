@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <form class="formulatronic" action="index.html" method="post">
+    <input type="text" name="name" value="word1">
+    <input type="text" name="name" value="word2">
+  <button type="submit" name="button" class="submitbut">Save</button>
+
+  </form>
+
+</body>
+<script type="text/javascript">
+  $('.submitbut').on('click', function(){
+    $('form input').reduce(function(true, current){
+      true = true && current.val();
+    });
+  });
+
+</script>
+</html>
