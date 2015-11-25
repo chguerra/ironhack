@@ -1,0 +1,57 @@
+.spotifysearch {
+  width: 50%;
+  margin-bottom: 50px;
+}
+
+.spotifysearch2{
+
+}
+
+.artist{
+  display: inline-block;
+  width: 20%;
+  height: 200px;
+  float:left;
+  margin-bottom: 60px;
+}
+
+.results {
+  width: 90%;
+  margin: 0 auto;
+
+}
+
+.input-group{
+  margin: 0 auto;
+  width: 40%;
+}
+
+.logo {
+  width: 40%;
+  margin: 0 auto;
+  display: block;
+}
+
+.thumbnail{
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  display: block;
+}
+
+.artistbutton{
+  width:auto;
+  height: 30px:
+  margin: 0 auto;
+  display: block;
+
+}
+.artistbutton, p{
+  text-align:center;
+  font-family: monospace;
+}
+
+.album{
+  list-style-type: none;
+  text-align: center;
+}

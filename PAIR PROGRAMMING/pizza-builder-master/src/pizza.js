@@ -49,3 +49,7 @@ function updatePrice(target) {
   totalAmount.data("price", currentPrice);
   totalAmount.text("$" + currentPrice);
 }
+
+$('form-control').on('click', function(){
+    $('spotifysearch').addClass('spotifysearch2');
+});
