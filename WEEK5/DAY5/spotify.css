@@ -1,0 +1,53 @@
+.input-group{
+  width: 50%;
+  margin: 0 auto;
+}
+
+
+.logo {
+  width: 300px;
+  margin: 0 auto;
+  display: block;
+}
+
+.thumbnail{
+  max-width: 200px;
+  max-height: 200px;
+  margin: 0 auto;
+}
+
+.track{
+  display: inline-block;
+  width: 20%;
+}
+
+.results {
+  margin-top: 20px;
+  margin: 0 auto;
+  display: block;
+  padding-top: 25px;
+}
+
+.results, p{
+  text-align: center;
+  color: gray;
+  font-family: monospace;
+}
+
+.player {
+    width: 150px;
+    margin: 1%;
+    position: absolute;
+    background-color: lavender;
+    border: 5px solid lavender;
+    border-radius: 5px;
+}
+
+#playbtn {
+  margin: 0 auto;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.progress {background: rgba(255, 255, 255, 1); border: 4px solid rgba(56, 179, 52, 1); border-radius: 10px; height: 20px;}
+.progress-bar-custom {background: rgba(66, 139, 202, 1);}
