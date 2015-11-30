@@ -6,7 +6,7 @@ function fetchTracks(){
 function handleTracks(request){
   console.log(request);
     request.tracks.items.forEach(function(track){
-        var html = '<div class="track" ><a href="#"><img data-url="' + track.preview_url + '" class="thumbnail" src="' + track.album.images[0].url + '"><p>' + track.name + '</p></a></div>';
+        var html = '<div class="track" ><a href="#"><img data-url="' + track.preview_url + '" class="thumbnail" src="' + track.album.images[0].url + '"><p>' + track.name + '</a><br>' + track.artists[0].name  + '</p></div>';
         $('.results').append(html);
     });
   }//End of handleTracks
@@ -49,7 +49,8 @@ function generatePlayerControls(){
   $('.player').html('<button id="playbtn" class="btn btn-success play-btn"><span class="glyphicon glyphicon-play" aria-hidden="true"></span>  ');
 };
 
-$(document).on('click', '.btn', function(){
+$(document).on('click', '#go', function(){
+    event.preventDefault();
     $('.results').empty();
     fetchTracks();
 });
