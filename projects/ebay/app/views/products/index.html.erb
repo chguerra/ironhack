@@ -1,0 +1,11 @@
+<div class="products">
+  <% @user.products.each do |product| %>
+    <ul>
+      <li style="list-style-type: none;">
+        Product name: <%= product.title %><br>
+        Description: <%= product.description %><br>
+        Deadline <%= product.deadline %><br>
+      </li>
+    </ul>
+  <% end %>
+</div>

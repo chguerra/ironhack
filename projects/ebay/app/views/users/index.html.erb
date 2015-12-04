@@ -1,0 +1,18 @@
+<div class="products">
+  <% @users.each do |user| %>
+    <p style="text-align:center;font-weight:bold;">
+      <% if user.products.length != 0 %>
+      <br><br>User <%= user.name %> offers:
+      <% end %>
+    </p>
+    <% user.products.each do |product|%>
+    <ul>
+      <li style="list-style-type: none;">
+        Product name: <%= product.title %><br>
+        Description: <%= product.description %><br>
+        Deadline <%= product.deadline %><br>
+      </li>
+    </ul>
+    <% end %>
+  <% end %>
+</div>

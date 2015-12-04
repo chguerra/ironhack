@@ -4,17 +4,30 @@ class UsersController < ApplicationController
     end
 
     def create
-      @user = User.new(entry_params)
+      @user = User.new(user_params)
       if @user.save
-        redirect_to action: 'show', controller: 'users', id: @user.id
+        redirect_to '/users'
       else
         render 'new'
       end
 
     end
 
+    def home
+      render :index
+    end
+
     def destroy
 
+    end
+
+    def index
+      if current_user.nil?
+        @name = "Visitor"
+      else
+        @name = current_user.name
+      end
+      @users = User.all
     end
 
     def new
@@ -22,8 +35,8 @@ class UsersController < ApplicationController
     end
     private
 
-    def entry_params
-      params.require(:user).permit(:name, :id, :email)
+    def user_params
+      params.require(:user).permit(:name, :id, :email, :password, :password_confirmation)
     end
 
 end

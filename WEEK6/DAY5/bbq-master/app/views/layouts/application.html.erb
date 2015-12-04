@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Barbecues</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application', defer: true %>
+  <%= csrf_meta_tags %>
+</head>
+<body data-hook="controller-<%= controller_name %> action-<%= action_name %>">
+<% if user_signed_in? %>
+    <h2>Welcome <%= current_user.name %></h2>
+    <%= link_to 'Logout', destroy_user_session_path, method: 'DELETE' %>
+<% else %>
+    <h3>Nobody logged in</h3>
+<% end %>
+  <div class="container">
+    <%= yield %>
+  </div>
+
+</body>
+</html>
